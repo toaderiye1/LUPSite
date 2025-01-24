@@ -1,34 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Check, Clock, HandshakeIcon, LineChart, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import ServicesSection from "@/components/ServicesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import CallToActionSection from "@/components/CallToActionSection";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
-  const steps = [
-    {
-      title: "Consultation",
-      description: "Book a free consultation to discuss investment goals.",
-      icon: Clock,
-    },
-    {
-      title: "Deal Packaging",
-      description: "Receive bespoke property packages tailored to your ROI criteria.",
-      icon: LineChart,
-    },
-    {
-      title: "Execution",
-      description: "Let us manage contracts, negotiations, and the transition.",
-      icon: HandshakeIcon,
-    },
-  ];
-
-  const benefits = [
-    "Risk reduction through expert due diligence",
-    "Access to exclusive property opportunities",
-    "Hands-on guidance throughout the process",
-    "Quality assurance on all properties",
-  ];
-
   return (
     <div className="min-h-screen bg-brand-whiteish font-cabin">
       <Navbar />
@@ -36,106 +14,99 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-brand-darkGrey text-brand-whiteish py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold max-w-4xl mb-8">
-            I Help Busy Investors Unlock High-ROI Serviced Accommodation Deals in Manchester!
-          </h1>
-          <Button 
-            className="bg-brand-orange text-brand-darkGrey hover:bg-brand-brown hover:text-brand-whiteish"
-            size="lg"
-          >
-            Book Free Consultation <ArrowRight className="ml-2" />
-          </Button>
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fade-in">
+              I Help Busy Investors Unlock High-ROI Serviced Accommodation Deals in Manchester!
+            </h1>
+            <p className="text-xl mb-8 text-gray-300 animate-fade-in">
+              Expert guidance and premium opportunities in Manchester's thriving property market.
+            </p>
+            <Button 
+              className="bg-warm-bg text-warm-text hover:bg-warm-hover transition-colors duration-300 animate-fade-in"
+              size="lg"
+            >
+              Book Free Consultation <ArrowRight className="ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* What We Do Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-darkGrey mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-brand-darkGrey mb-8">
             Your Shortcut to Profitable Property Deals
-          </h2>
-          <p className="text-lg text-brand-grey max-w-3xl mb-6">
-            We specialize in sourcing premium rent-to-serviced accommodation (R2SA) deals, 
-            providing thorough analysis and due diligence for each opportunity. Our expertise 
-            saves you valuable time and eliminates the guesswork from property investment.
-          </p>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-brand-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-darkGrey mb-8">
-            Expert Support, Tailored for Investors
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-white border-none shadow-lg">
-                <CardContent className="p-6 flex items-start space-x-4">
-                  <Check className="text-brand-brown w-6 h-6 mt-1 flex-shrink-0" />
-                  <p className="text-lg text-brand-grey">{benefit}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-darkGrey mb-8">
-            3 Easy Steps to Secure Your Deal
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <Card key={index} className="border-none shadow-lg">
-                <CardContent className="p-6">
-                  <step.icon className="w-12 h-12 text-brand-brown mb-4" />
-                  <h3 className="text-xl font-bold text-brand-darkGrey mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-grey">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Us Different Section */}
-      <section className="py-16 bg-brand-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-darkGrey mb-8">
-            We're Investors, Just Like You
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <p className="text-lg text-brand-grey mb-6">
-                With years of hands-on experience in property investment, we understand 
-                the challenges and opportunities in the Manchester market. Our success 
-                is built on making smart investment decisions and helping others do the same.
+              <p className="text-lg text-gray-600 mb-6">
+                We specialize in sourcing premium rent-to-serviced accommodation (R2SA) deals, 
+                providing thorough analysis and due diligence for each opportunity. Our expertise 
+                saves you valuable time and eliminates the guesswork from property investment.
               </p>
-              <Shield className="w-12 h-12 text-brand-brown" />
+              <p className="text-lg text-gray-600">
+                With our deep understanding of the Manchester property market and extensive 
+                network, we identify and secure high-potential properties that align with 
+                your investment goals.
+              </p>
+            </div>
+            <div className="bg-warm-bg rounded-lg p-8">
+              <h3 className="text-xl font-semibold mb-4 text-warm-text">
+                Our Comprehensive Analysis Includes:
+              </h3>
+              <ul className="space-y-3 text-warm-text">
+                <li className="flex items-center">
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Market demand assessment
+                </li>
+                <li className="flex items-center">
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Revenue potential calculation
+                </li>
+                <li className="flex items-center">
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Property condition evaluation
+                </li>
+                <li className="flex items-center">
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Investment risk assessment
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-16 bg-brand-darkGrey text-brand-whiteish">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Ready to Invest? Let's Get Started!
+      <ServicesSection />
+      <WhyChooseUsSection />
+      <HowItWorksSection />
+
+      {/* What Makes Us Different Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-brand-darkGrey">
+            We're Investors, Just Like You
           </h2>
-          <Button 
-            className="bg-brand-orange text-brand-darkGrey hover:bg-brand-brown hover:text-brand-whiteish"
-            size="lg"
-          >
-            Book Your Free Consultation <ArrowRight className="ml-2" />
-          </Button>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg text-gray-600 mb-8">
+              With years of hands-on experience in property investment, we understand 
+              the challenges and opportunities in the Manchester market. Our success 
+              is built on making smart investment decisions and helping others do the same.
+            </p>
+            <div className="bg-brand-cream rounded-lg p-8">
+              <blockquote className="italic text-gray-700 mb-4">
+                "Their expertise in the Manchester property market is unmatched. They helped me 
+                secure a high-performing serviced accommodation property that has exceeded my ROI expectations."
+              </blockquote>
+              <p className="font-semibold text-brand-darkGrey">
+                - Sarah Johnson, Property Investor
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
+      <CallToActionSection />
     </div>
   );
 };
