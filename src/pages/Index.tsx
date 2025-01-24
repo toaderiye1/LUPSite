@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Check, Clock, HandshakeIcon, LineChart, Shield } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   const steps = [
@@ -29,7 +30,9 @@ const Index = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-brand-whiteish font-cabin">
+    <div className="min-h-screen bg-brand-whiteish font-cabin">
+      <Navbar />
+      
       {/* Hero Section */}
       <section className="relative bg-brand-darkGrey text-brand-whiteish py-20">
         <div className="container mx-auto px-4">
@@ -133,7 +136,7 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 
