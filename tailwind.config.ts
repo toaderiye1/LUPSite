@@ -59,6 +59,9 @@ export default {
           text: "#333333",
         },
       },
+      borderColor: {
+        DEFAULT: "hsl(var(--border))"
+      },
       fontFamily: {
         cabin: ["Cabin", "sans-serif"],
       },
