@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Key, Lock, Calendar, Handshake } from "lucide-react";
+import { ArrowRight, Key, Lock, Calendar, Handshake, ChartBar, Shield, Wrench } from "lucide-react";
 
 const Landlord = () => {
   return (

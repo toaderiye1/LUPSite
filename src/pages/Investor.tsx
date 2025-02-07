@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChartBar, Shield, Users, Briefcase } from "lucide-react";
+import { ArrowRight, ChartBar, Shield, Users, Briefcase, TrendingUp, NetworkIcon, Building } from "lucide-react";
 
 const Investor = () => {
   return (
@@ -31,49 +31,77 @@ const Investor = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Your Investment Journey Section */}
       <section className="py-20 bg-white relative">
         <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-brand-darkGrey text-center mb-16">Your Investment Journey</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <ChartBar className="w-12 h-12 mx-auto mb-4 text-warm-bg" />
-              <h3 className="text-4xl font-bold text-brand-darkGrey">15%+</h3>
-              <p className="text-gray-600">Average Annual ROI</p>
+            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
+              <Briefcase className="w-12 h-12 mb-4 text-warm-bg" />
+              <h3 className="text-xl font-semibold text-brand-darkGrey">Premium Deal Sourcing</h3>
+              <p className="text-gray-600 mt-2">Access to off-market properties and exclusive R2SA opportunities in Manchester's most promising areas.</p>
             </div>
-            <div className="text-center p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <Shield className="w-12 h-12 mx-auto mb-4 text-warm-bg" />
-              <h3 className="text-4xl font-bold text-brand-darkGrey">£25M+</h3>
-              <p className="text-gray-600">Portfolio Value</p>
+            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
+              <Shield className="w-12 h-12 mb-4 text-warm-bg" />
+              <h3 className="text-xl font-semibold text-brand-darkGrey">Risk Mitigation</h3>
+              <p className="text-gray-600 mt-2">Comprehensive due diligence and market analysis to protect your investment.</p>
             </div>
-            <div className="text-center p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <Users className="w-12 h-12 mx-auto mb-4 text-warm-bg" />
-              <h3 className="text-4xl font-bold text-brand-darkGrey">50+</h3>
-              <p className="text-gray-600">Premium Investors</p>
+            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
+              <TrendingUp className="w-12 h-12 mb-4 text-warm-bg" />
+              <h3 className="text-xl font-semibold text-brand-darkGrey">Performance Optimization</h3>
+              <p className="text-gray-600 mt-2">Dynamic pricing and strategic management to maximize returns.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Investment Strategy Section */}
+      {/* Why Choose Us Section */}
       <section className="py-24 bg-brand-darkGrey text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,218,166,0.1),transparent_70%)]" />
         <div className="container mx-auto px-4 relative">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-16 text-center">Your Investment Journey</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-16 text-center">Expert Support, Tailored for Investors</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <Briefcase className="w-16 h-16 text-warm-bg" />
-              <h3 className="text-2xl font-semibold">Premium Deal Sourcing</h3>
-              <p className="text-gray-300">Access to off-market properties and exclusive R2SA opportunities in Manchester's most promising areas.</p>
+              <Building className="w-16 h-16 text-warm-bg" />
+              <h3 className="text-2xl font-semibold">Network Access Benefits</h3>
+              <p className="text-gray-300">Leverage our established network of property professionals and prime investment opportunities.</p>
+              <ul className="space-y-4 text-gray-300">
+                <li className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-warm-bg rounded-full" />
+                  <span>Access to off-market deals</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-warm-bg rounded-full" />
+                  <span>Professional property management</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-warm-bg rounded-full" />
+                  <span>Legal and financial expertise</span>
+                </li>
+              </ul>
             </div>
-            <div className="space-y-6">
-              <Shield className="w-16 h-16 text-warm-bg" />
-              <h3 className="text-2xl font-semibold">Risk Mitigation</h3>
-              <p className="text-gray-300">Comprehensive due diligence and market analysis to protect your investment and ensure optimal returns.</p>
-            </div>
-            <div className="space-y-6">
-              <ChartBar className="w-16 h-16 text-warm-bg" />
-              <h3 className="text-2xl font-semibold">Performance Optimization</h3>
-              <p className="text-gray-300">Continuous market monitoring and strategy adjustment to maximize your property's earning potential.</p>
+            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold">Investment Highlights</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-warm-bg">15%+</p>
+                    <p className="text-sm text-gray-300">Average Annual ROI</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-warm-bg">£25M+</p>
+                    <p className="text-sm text-gray-300">Portfolio Value</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-warm-bg">50+</p>
+                    <p className="text-sm text-gray-300">Premium Investors</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-warm-bg">10+</p>
+                    <p className="text-sm text-gray-300">Years Experience</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
