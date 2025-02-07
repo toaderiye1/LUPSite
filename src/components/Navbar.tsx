@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -34,9 +33,9 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="#services" isScrolled={scrolled}>Services</NavLink>
+            <NavLink href="/investor" isScrolled={scrolled}>For Investors</NavLink>
+            <NavLink href="/landlord" isScrolled={scrolled}>For Landlords</NavLink>
             <NavLink href="#why-choose-us" isScrolled={scrolled}>Why Choose Us</NavLink>
-            <NavLink href="#how-it-works" isScrolled={scrolled}>Process</NavLink>
             <button className="px-6 py-2.5 bg-warm-bg text-warm-text rounded-full hover:bg-warm-hover transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Book Consultation
             </button>
@@ -57,9 +56,9 @@ const Navbar = () => {
           isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         )}>
           <div className="container mx-auto px-4 py-4 space-y-4">
-            <MobileNavLink href="#services" onClick={() => setIsOpen(false)}>Services</MobileNavLink>
+            <MobileNavLink href="/investor" onClick={() => setIsOpen(false)}>For Investors</MobileNavLink>
+            <MobileNavLink href="/landlord" onClick={() => setIsOpen(false)}>For Landlords</MobileNavLink>
             <MobileNavLink href="#why-choose-us" onClick={() => setIsOpen(false)}>Why Choose Us</MobileNavLink>
-            <MobileNavLink href="#how-it-works" onClick={() => setIsOpen(false)}>Process</MobileNavLink>
             <button className="w-full px-6 py-3 bg-warm-bg text-warm-text rounded-full hover:bg-warm-hover transition-all duration-300">
               Book Consultation
             </button>
