@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Key, Lock, Calendar, HandShake } from "lucide-react";
+import { ArrowRight, Key, Lock, Calendar, Handshake } from "lucide-react";
 
 const Landlord = () => {
   return (
@@ -51,7 +51,7 @@ const Landlord = () => {
               <p className="text-gray-600 mt-2">Round-the-clock property and guest management.</p>
             </div>
             <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <HandShake className="w-12 h-12 mb-4 text-warm-bg" />
+              <Handshake className="w-12 h-12 mb-4 text-warm-bg" />
               <h3 className="text-xl font-semibold text-brand-darkGrey">Premium Service</h3>
               <p className="text-gray-600 mt-2">Five-star hospitality standards for your property.</p>
             </div>
