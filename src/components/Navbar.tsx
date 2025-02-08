@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -35,7 +36,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="/investor" isScrolled={scrolled}>For Investors</NavLink>
             <NavLink href="/landlord" isScrolled={scrolled}>For Landlords</NavLink>
-            <NavLink href="#why-choose-us" isScrolled={scrolled}>Why Choose Us</NavLink>
+            <NavLink href="/why-choose-us" isScrolled={scrolled}>Why Choose Us</NavLink>
             <button className="px-6 py-2.5 bg-warm-bg text-warm-text rounded-full hover:bg-warm-hover transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Book Consultation
             </button>
@@ -58,7 +59,7 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 space-y-4">
             <MobileNavLink href="/investor" onClick={() => setIsOpen(false)}>For Investors</MobileNavLink>
             <MobileNavLink href="/landlord" onClick={() => setIsOpen(false)}>For Landlords</MobileNavLink>
-            <MobileNavLink href="#why-choose-us" onClick={() => setIsOpen(false)}>Why Choose Us</MobileNavLink>
+            <MobileNavLink href="/why-choose-us" onClick={() => setIsOpen(false)}>Why Choose Us</MobileNavLink>
             <button className="w-full px-6 py-3 bg-warm-bg text-warm-text rounded-full hover:bg-warm-hover transition-all duration-300">
               Book Consultation
             </button>
@@ -70,8 +71,8 @@ const Navbar = () => {
 };
 
 const NavLink = ({ href, children, isScrolled }: { href: string; children: React.ReactNode; isScrolled: boolean }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className={cn(
       "transition-colors duration-300 relative group",
       isScrolled ? "text-brand-whiteish hover:text-warm-bg" : "text-brand-whiteish hover:text-warm-bg"
@@ -79,17 +80,17 @@ const NavLink = ({ href, children, isScrolled }: { href: string; children: React
   >
     {children}
     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-warm-bg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-  </a>
+  </Link>
 );
 
 const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick: () => void }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     onClick={onClick}
     className="block py-2 text-brand-whiteish hover:text-warm-bg transition-colors duration-300 text-center"
   >
     {children}
-  </a>
+  </Link>
 );
 
 export default Navbar;
