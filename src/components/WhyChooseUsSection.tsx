@@ -53,10 +53,11 @@ const WhyChooseUsSection = () => {
 
   return (
     <section id="why-choose-us" className="w-full py-24 bg-brand-cream relative overflow-hidden">
-      {/* Background Elements */}
+      {/* Gradient Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(146,122,100,0.1),transparent_70%)]" />
       
       <div className="container mx-auto px-4 relative">
+        {/* Header Section */}
         <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-semibold text-brand-darkGrey">
             Expert Support, Tailored for Success
@@ -66,6 +67,7 @@ const WhyChooseUsSection = () => {
           </p>
         </div>
 
+        {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <Card 
@@ -104,13 +106,13 @@ const WhyChooseUsSection = () => {
           ))}
         </div>
 
-        {/* Trust Indicators */}
+        {/* Trust Section */}
         <div className="mt-20 text-center animate-fade-in [animation-delay:600ms]">
           <p className="text-xl text-gray-600">
             Trusted by investors and property owners across Manchester
           </p>
           <div className="mt-8 flex justify-center space-x-8">
-            {/* Add partner/certification logos here if needed */}
+            {/* Partner logos can be added here */}
           </div>
         </div>
       </div>
