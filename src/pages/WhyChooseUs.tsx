@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
   return (
     <div className="min-h-screen bg-brand-whiteish">
       <Navbar />
-      <main>
+      <main className="pt-20">
         <WhyChooseUsSection />
         <CallToActionSection />
       </main>
