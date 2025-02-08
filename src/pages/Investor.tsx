@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChartBar, Shield, Users, Briefcase, TrendingUp, Building } from "lucide-react";
@@ -9,23 +8,63 @@ const Investor = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-brand-darkGrey text-brand-whiteish flex items-center pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.1),transparent_50%)]" />
+      <section className="relative min-h-screen flex items-center pt-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url("/lovable-uploads/modern-manchester-skyline.jpg")',
+          }}
+        >
+          <div className="absolute inset-0 bg-brand-darkGrey/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-darkGrey/90 via-brand-darkGrey/70 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.15),transparent_70%)]" />
+        </div>
+
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in">
-              I Help Busy Investors Unlock High-ROI Serviced Accommodation Deals in Manchester!
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms]">
-              Access exclusive R2SA deals with guaranteed yields and comprehensive management solutions.
+            <div className="flex flex-col gap-4">
+              <span className="text-warm-bg font-semibold tracking-wider animate-fade-in">
+                PREMIUM INVESTMENT OPPORTUNITIES
+              </span>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-brand-whiteish animate-fade-in">
+                Unlock Manchester's Most Profitable Serviced Accommodation Deals
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms] max-w-2xl">
+              Access exclusive R2SA deals with <span className="text-warm-bg font-semibold">15-25% ROI</span> and our proven system for passive property income.
             </p>
-            <div className="animate-fade-in [animation-delay:400ms]">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
               <Button 
                 className="bg-warm-bg text-warm-text hover:bg-warm-hover transition-all duration-300 transform hover:scale-105"
                 size="lg"
               >
                 Book Free Consultation <ArrowRight className="ml-2" />
               </Button>
+              <Button 
+                className="bg-transparent border-2 border-warm-bg text-warm-bg hover:bg-warm-bg/10 transition-all duration-300"
+                size="lg"
+              >
+                View Latest Opportunities
+              </Button>
+            </div>
+            
+            <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-700 animate-fade-in [animation-delay:600ms]">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">£25M+</p>
+                <p className="text-sm text-gray-400">Portfolio Value</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">20%</p>
+                <p className="text-sm text-gray-400">Avg. ROI</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">50+</p>
+                <p className="text-sm text-gray-400">Happy Investors</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">10+</p>
+                <p className="text-sm text-gray-400">Years Experience</p>
+              </div>
             </div>
           </div>
         </div>

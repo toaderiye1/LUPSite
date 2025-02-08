@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Key, Lock, Calendar, Handshake, ChartBar, Shield, Wrench } from "lucide-react";
@@ -9,23 +8,63 @@ const Landlord = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-brand-darkGrey text-brand-whiteish flex items-center pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.1),transparent_50%)]" />
+      <section className="relative min-h-screen flex items-center pt-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url("/lovable-uploads/luxury-apartment-interior.jpg")',
+          }}
+        >
+          <div className="absolute inset-0 bg-brand-darkGrey/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-darkGrey/90 via-brand-darkGrey/70 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.15),transparent_70%)]" />
+        </div>
+
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in">
-              I Help Landlords Maximise Their Property's Revenue with Hassle-Free Management
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms]">
-              Transform your property into a premium income asset with our professional serviced accommodation management.
+            <div className="flex flex-col gap-4">
+              <span className="text-warm-bg font-semibold tracking-wider animate-fade-in">
+                GUARANTEED RENTAL INCOME
+              </span>
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-brand-whiteish animate-fade-in">
+                Transform Your Property Into a Premium Income Asset
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms] max-w-2xl">
+              Earn up to <span className="text-warm-bg font-semibold">40% more revenue</span> with our professional serviced accommodation management.
             </p>
-            <div className="animate-fade-in [animation-delay:400ms]">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
               <Button 
                 className="bg-warm-bg text-warm-text hover:bg-warm-hover transition-all duration-300 transform hover:scale-105"
                 size="lg"
               >
                 Book Property Assessment <ArrowRight className="ml-2" />
               </Button>
+              <Button 
+                className="bg-transparent border-2 border-warm-bg text-warm-bg hover:bg-warm-bg/10 transition-all duration-300"
+                size="lg"
+              >
+                Calculate Your Potential Income
+              </Button>
+            </div>
+
+            <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-700 animate-fade-in [animation-delay:600ms]">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">40%</p>
+                <p className="text-sm text-gray-400">Higher Revenue</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">100%</p>
+                <p className="text-sm text-gray-400">Occupancy Target</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">24/7</p>
+                <p className="text-sm text-gray-400">Support</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-warm-bg">0</p>
+                <p className="text-sm text-gray-400">Void Periods</p>
+              </div>
             </div>
           </div>
         </div>
