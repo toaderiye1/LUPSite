@@ -1,5 +1,5 @@
 
-import { Shield, TrendingUp, Users, Network } from "lucide-react";
+import { Shield, TrendingUp, Users, Network, Building2, BadgeCheck } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
 const WhyChooseUsSection = () => {
@@ -7,12 +7,17 @@ const WhyChooseUsSection = () => {
     {
       icon: Shield,
       title: "Risk Mitigation",
-      description: "Our comprehensive due diligence and market analysis protect your investment and ensure optimal returns.",
+      description: "Comprehensive due diligence and market analysis protect your investment, ensuring optimal returns in the Manchester market.",
     },
     {
       icon: TrendingUp,
       title: "Premium Properties",
-      description: "Access to exclusive, high-performing properties that meet our rigorous quality standards.",
+      description: "Access to exclusive, high-performing R2SA properties that consistently meet our rigorous quality standards.",
+    },
+    {
+      icon: Building2,
+      title: "Local Expertise",
+      description: "Deep understanding of Manchester's property market dynamics and growth opportunities.",
     },
     {
       icon: Network,
@@ -24,6 +29,26 @@ const WhyChooseUsSection = () => {
       title: "Dedicated Support",
       description: "Personalized guidance through every step, from property selection to successful management.",
     },
+    {
+      icon: BadgeCheck,
+      title: "Proven Track Record",
+      description: "Consistent success in delivering high-yield R2SA investments for our valued clients.",
+    },
+  ];
+
+  const stats = [
+    {
+      value: "£25M+",
+      label: "Property Portfolio Managed"
+    },
+    {
+      value: "98%",
+      label: "Client Satisfaction Rate"
+    },
+    {
+      value: "15+",
+      label: "Years Industry Experience"
+    }
   ];
 
   return (
@@ -32,22 +57,23 @@ const WhyChooseUsSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(146,122,100,0.1),transparent_70%)]" />
       
       <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-semibold text-brand-darkGrey">
-            Expert Support, Tailored for Investors
+            Expert Support, Tailored for Success
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We understand what investors need because we're investors ourselves. Our proven approach combines local expertise with innovative solutions.
+            We understand what property stakeholders need because we're investors ourselves. Our proven approach combines local expertise with innovative solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] bg-white/80 backdrop-blur-sm"
+              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] bg-white/80 backdrop-blur-sm animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardContent className="p-8 flex items-start space-x-6">
+              <CardContent className="p-8 flex flex-col items-start space-y-4">
                 <div className="w-14 h-14 rounded-full bg-warm-bg flex items-center justify-center flex-shrink-0">
                   <benefit.icon className="w-7 h-7 text-warm-text" />
                 </div>
@@ -66,17 +92,25 @@ const WhyChooseUsSection = () => {
 
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-brand-darkGrey">£25M+</p>
-            <p className="text-gray-600">Property Portfolio Managed</p>
-          </div>
-          <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-brand-darkGrey">98%</p>
-            <p className="text-gray-600">Client Satisfaction Rate</p>
-          </div>
-          <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-brand-darkGrey">15+ Years</p>
-            <p className="text-gray-600">Industry Experience</p>
+          {stats.map((stat, index) => (
+            <div 
+              key={index} 
+              className="text-center space-y-2 animate-fade-in"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <p className="text-4xl font-bold text-brand-darkGrey">{stat.value}</p>
+              <p className="text-gray-600">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="mt-20 text-center animate-fade-in [animation-delay:600ms]">
+          <p className="text-xl text-gray-600">
+            Trusted by investors and property owners across Manchester
+          </p>
+          <div className="mt-8 flex justify-center space-x-8">
+            {/* Add partner/certification logos here if needed */}
           </div>
         </div>
       </div>
