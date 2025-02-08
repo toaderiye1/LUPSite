@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -13,29 +12,79 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-brand-darkGrey text-brand-whiteish flex items-center pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.1),transparent_50%)]" />
-        <div className="container mx-auto px-4 relative">
+      <section className="relative min-h-screen flex items-center pt-20">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/lovable-uploads/7d7ccab6-6209-4246-b447-9746d0a8b474.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="absolute inset-0 bg-brand-darkGrey/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-darkGrey/90 via-brand-darkGrey/70 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in">
-              I Help Busy Investors Unlock High-ROI Serviced Accommodation Deals in Manchester!
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms]">
-              Expert guidance and premium opportunities in Manchester's thriving property market.
+            <div className="relative">
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight text-brand-whiteish animate-fade-in">
+                Unlock High-ROI Serviced Accommodation Deals in{' '}
+                <span className="relative">
+                  Manchester!
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-warm-bg to-transparent"></span>
+                </span>
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms] max-w-3xl">
+              Expert guidance and premium opportunities in Manchester's thriving property market. 
+              We make serviced accommodation investment hassle-free and profitable.
             </p>
-            <div className="animate-fade-in [animation-delay:400ms]">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
               <Button 
                 className="bg-warm-bg text-warm-text hover:bg-warm-hover transition-all duration-300 transform hover:scale-105"
                 size="lg"
               >
                 Book Free Consultation <ArrowRight className="ml-2" />
               </Button>
+              
+              <Button 
+                variant="outline" 
+                className="border-brand-whiteish text-brand-whiteish hover:bg-brand-whiteish/10 transition-all duration-300"
+                size="lg"
+              >
+                View Success Stories
+              </Button>
+            </div>
+            <div className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in [animation-delay:600ms]">
+              <div className="flex items-center space-x-2">
+                <div className="text-brand-whiteish">
+                  <p className="text-3xl font-bold">£25M+</p>
+                  <p className="text-sm text-gray-300">Portfolio Managed</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="text-brand-whiteish">
+                  <p className="text-3xl font-bold">98%</p>
+                  <p className="text-sm text-gray-300">Client Satisfaction</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="text-brand-whiteish">
+                  <p className="text-3xl font-bold">15+</p>
+                  <p className="text-sm text-gray-300">Years Experience</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
+      <ServicesSection />
+      <WhyChooseUsSection />
+      <HowItWorksSection />
+
       <section id="services" className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(146,122,100,0.1),transparent_70%)]" />
         <div className="container mx-auto px-4 relative">
@@ -70,11 +119,6 @@ const Index = () => {
         </div>
       </section>
 
-      <ServicesSection />
-      <WhyChooseUsSection />
-      <HowItWorksSection />
-
-      {/* What Makes Us Different Section */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(242,218,166,0.1),transparent_70%)]" />
         <div className="container mx-auto px-4 relative">
