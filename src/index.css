@@ -57,4 +57,28 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom text selection styles */
+  ::selection {
+    background-color: #F2DAA6; /* warm-bg color */
+    color: #1A1A1A; /* brand-darkGrey for contrast */
+  }
+
+  ::-moz-selection {
+    background-color: #F2DAA6; /* warm-bg color */
+    color: #1A1A1A; /* brand-darkGrey for contrast */
+  }
+
+  /* For dark backgrounds, use a different selection color for better contrast */
+  .bg-brand-darkGrey ::selection,
+  [class*='dark'] ::selection {
+    background-color: #F2DAA6; /* warm-bg color */
+    color: #1A1A1A; /* brand-darkGrey */
+  }
+
+  .bg-brand-darkGrey ::-moz-selection,
+  [class*='dark'] ::-moz-selection {
+    background-color: #F2DAA6; /* warm-bg color */
+    color: #1A1A1A; /* brand-darkGrey */
+  }
 }

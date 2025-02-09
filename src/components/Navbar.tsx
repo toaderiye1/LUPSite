@@ -1,5 +1,4 @@
-
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -70,18 +69,27 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ href, children, isScrolled }: { href: string; children: React.ReactNode; isScrolled: boolean }) => (
-  <Link
-    to={href}
-    className={cn(
-      "transition-colors duration-300 relative group",
-      isScrolled ? "text-brand-whiteish hover:text-warm-bg" : "text-brand-whiteish hover:text-warm-bg"
-    )}
-  >
-    {children}
-    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-warm-bg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-  </Link>
-);
+const NavLink = ({ href, children, isScrolled }: { href: string; children: React.ReactNode; isScrolled: boolean }) => {
+  const location = useLocation();
+  const isActive = location.pathname === href;
+  
+  return (
+    <Link
+      to={href}
+      className={cn(
+        "transition-colors duration-300 relative group",
+        isScrolled ? "text-brand-whiteish hover:text-warm-bg" : "text-brand-whiteish hover:text-warm-bg",
+        isActive && "text-warm-bg"
+      )}
+    >
+      {children}
+      <span className={cn(
+        "absolute bottom-0 left-0 w-full h-0.5 bg-warm-bg transform transition-transform duration-300",
+        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+      )} />
+    </Link>
+  );
+};
 
 const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick: () => void }) => (
   <Link

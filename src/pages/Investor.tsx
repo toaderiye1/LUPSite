@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChartBar, Shield, Users, Briefcase, TrendingUp, Building } from "lucide-react";
+import { ArrowRight, ChartBar, Shield, Users, Briefcase, TrendingUp, Building, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Investor = () => {
   return (
@@ -12,11 +14,11 @@ const Investor = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url("/lovable-uploads/modern-manchester-skyline.jpg")',
+            backgroundImage: 'url("/lovable-uploads/lux-flat-exterior.png")',
           }}
         >
-          <div className="absolute inset-0 bg-brand-darkGrey/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-darkGrey/90 via-brand-darkGrey/70 to-transparent" />
+          <div className="absolute inset-0 bg-brand-darkGrey/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-darkGrey/85 via-brand-darkGrey/55 to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,218,166,0.15),transparent_70%)]" />
         </div>
 
@@ -31,7 +33,7 @@ const Investor = () => {
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-gray-300 animate-fade-in [animation-delay:200ms] max-w-2xl">
-              Access exclusive R2SA deals with <span className="text-warm-bg font-semibold">15-25% ROI</span> and our proven system for passive property income.
+              Access exclusive R2SA deals with <span className="text-warm-bg font-semibold">10-25% ROI</span> and our proven system for passive property income.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
               <Button 
@@ -43,26 +45,27 @@ const Investor = () => {
               <Button 
                 className="bg-transparent border-2 border-warm-bg text-warm-bg hover:bg-warm-bg/10 transition-all duration-300"
                 size="lg"
-              >
-                View Latest Opportunities
+              ><Link to="/why-choose-us">
+                Learn More About R2SA
+                </Link>
               </Button>
             </div>
             
             <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-700 animate-fade-in [animation-delay:600ms]">
               <div className="text-center">
-                <p className="text-3xl font-bold text-warm-bg">£25M+</p>
+                <p className="text-3xl font-bold text-warm-bg">£XX</p>
                 <p className="text-sm text-gray-400">Portfolio Value</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-warm-bg">20%</p>
+                <p className="text-3xl font-bold text-warm-bg">XX%</p>
                 <p className="text-sm text-gray-400">Avg. ROI</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-warm-bg">50+</p>
+                <p className="text-3xl font-bold text-warm-bg">XX</p>
                 <p className="text-sm text-gray-400">Happy Investors</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-warm-bg">10+</p>
+                <p className="text-3xl font-bold text-warm-bg">XX</p>
                 <p className="text-sm text-gray-400">Years Experience</p>
               </div>
             </div>
@@ -71,27 +74,96 @@ const Investor = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-20 bg-white relative">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-brand-darkGrey text-center mb-16">Your Shortcut to Profitable Property Deals</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <Briefcase className="w-12 h-12 mb-4 text-warm-bg" />
-              <h3 className="text-xl font-semibold text-brand-darkGrey">R2SA Deal Sourcing</h3>
-              <p className="text-gray-600 mt-2">Expert analysis and due diligence for premium serviced accommodation opportunities.</p>
-            </div>
-            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <Shield className="w-12 h-12 mb-4 text-warm-bg" />
-              <h3 className="text-xl font-semibold text-brand-darkGrey">Time-Saving Solutions</h3>
-              <p className="text-gray-600 mt-2">We eliminate guesswork and handle all aspects of deal sourcing and setup.</p>
-            </div>
-            <div className="p-8 bg-brand-cream rounded-2xl transform hover:scale-105 transition-duration-300">
-              <TrendingUp className="w-12 h-12 mb-4 text-warm-bg" />
-              <h3 className="text-xl font-semibold text-brand-darkGrey">Proven ROI</h3>
-              <p className="text-gray-600 mt-2">Track record of delivering high-performing investment opportunities.</p>
-            </div>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-darkGrey/5 to-brand-darkGrey/0"></div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="container mx-auto px-4"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            Your Shortcut to 
+            <span className="text-warm-bg ml-2">Profitable Property Deals</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {[
+              {
+                icon: "💎",
+                title: "R2SA Deal Sourcing",
+                description: "Expert analysis and due diligence for premium serviced accommodation opportunities.",
+                features: ["Market analysis", "Location scoring", "Yield assessment", "Growth potential"],
+                gradient: "from-[#FFD700]/20 via-transparent to-transparent"
+              },
+              {
+                icon: "⚡",
+                title: "Time-Saving Solutions",
+                description: "We eliminate guesswork and handle all aspects of deal sourcing and setup.",
+                features: ["Deal negotiation", "Legal compliance", "Setup coordination", "Ongoing support"],
+                gradient: "from-[#00FF87]/20 via-transparent to-transparent"
+              },
+              {
+                icon: "📈",
+                title: "Proven ROI",
+                description: "Track record of delivering high-performing investment opportunities.",
+                features: ["Performance tracking", "Yield optimisation", "Risk management", "Regular reporting"],
+                gradient: "from-[#FF6B6B]/20 via-transparent to-transparent"
+              }
+            ].map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="relative group"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-b ${card.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl`}></div>
+                <div className="relative bg-white dark:bg-brand-darkGrey/40 backdrop-blur-sm rounded-3xl p-8 h-full border border-gray-200 dark:border-gray-800 hover:border-warm-bg transition-colors duration-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-4xl">{card.icon}</span>
+                    <motion.div
+                      initial={false}
+                      className="h-1 w-12 bg-warm-bg/30 group-hover:w-24 transition-all duration-300"
+                    />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold mb-4 text-brand-darkGrey dark:text-brand-whiteish">
+                    {card.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                    {card.description}
+                  </p>
+
+                  <ul className="space-y-3">
+                    {card.features.map((feature, featureIndex) => (
+                      <motion.li
+                        key={featureIndex}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + featureIndex * 0.1 }}
+                        className="flex items-center text-sm text-gray-600 dark:text-gray-300"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-warm-bg mr-3" />
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <motion.div 
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-warm-bg/0 via-warm-bg to-warm-bg/0 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+                    initial={false}
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Expert Support Section */}
@@ -149,6 +221,164 @@ const Investor = () => {
         </div>
       </section>
 
+      {/* Property Sourcing Section */}
+      <motion.section 
+        className="py-20 bg-brand-darkGrey/50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-brand-whiteish mb-6">
+                  Premium R2SA Property Sourcing
+                </h2>
+                <p className="text-xl text-gray-300 mb-8">
+                  Excelling in identifying and securing high-potential properties that deliver exceptional returns through our R2SA strategy. We combine market intelligence with local insights to source properties that consistently outperform.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Immediate rental income potential",
+                    "Premium locations with high occupancy rates",
+                    "Thoroughly vetted opportunities",
+                    "Market-leading ROI performance"
+                  ].map((item, index) => (
+                    <motion.li 
+                      key={index}
+                      className="flex items-start text-gray-300"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: 0.1 * index }}
+                    >
+                      <CheckCircle className="w-6 h-6 text-warm-bg mr-3 flex-shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/lux-flat-exterior.png" 
+                    alt="Luxury property exterior" 
+                    className="w-full h-[400px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-darkGrey/80 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="bg-brand-darkGrey/90 rounded-xl p-6 backdrop-blur-sm">
+                      <h3 className="text-xl font-bold text-brand-whiteish mb-2">Premium Properties</h3>
+                      <p className="text-gray-300">Carefully selected properties in prime locations that meet our strict R2SA criteria.</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Setup and Staging Section */}
+      <motion.section 
+        className="py-20 bg-[#f5f0ea]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-brand-darkGrey text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Professional Setup & Staging Services
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  image: "/lovable-uploads/lux-flat-interior.png",
+                  title: "Interior Design Excellence",
+                  description: "Transform spaces with premium furnishings and décor that appeals to high-value guests."
+                },
+                {
+                  image: "/lovable-uploads/lux-flat-interior2.png",
+                  title: "Complete Property Setup",
+                  description: "From furniture to finishing touches, we handle every detail of your property setup."
+                },
+                {
+                  image: "/lovable-uploads/deal-signing.png",
+                  title: "Turnkey Management",
+                  description: "Comprehensive property management services for hassle-free investments."
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <motion.img 
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-darkGrey/60 to-transparent" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-brand-darkGrey mb-3">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                  <motion.div 
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-warm-bg transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                    initial={false}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button 
+                asChild
+                size="lg"
+                className="bg-warm-bg text-brand-darkGrey hover:bg-warm-bg/90"
+              >
+                <Link to="/book-consultation">Schedule Your Property Assessment</Link>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* We're Investors Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -157,19 +387,19 @@ const Investor = () => {
             <p className="text-xl text-gray-600">With years of experience in property investment, we understand your goals and challenges. Our success is built on delivering consistent results for our investors.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <p className="text-4xl font-bold text-warm-bg">£25M+</p>
+                <p className="text-4xl font-bold text-warm-bg">£XX</p>
                 <p className="text-sm text-gray-600">Portfolio Value</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-warm-bg">15%+</p>
+                <p className="text-4xl font-bold text-warm-bg">XX%+</p>
                 <p className="text-sm text-gray-600">Average ROI</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-warm-bg">50+</p>
+                <p className="text-4xl font-bold text-warm-bg">XX+</p>
                 <p className="text-sm text-gray-600">Happy Investors</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-warm-bg">10+</p>
+                <p className="text-4xl font-bold text-warm-bg">XX+</p>
                 <p className="text-sm text-gray-600">Years Experience</p>
               </div>
             </div>

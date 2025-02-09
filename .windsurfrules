@@ -1,0 +1,34 @@
+{
+  "performance": {
+    "assets": {
+      "image_compression": {
+        "formats": ["webp", "avif"],
+        "max_size_kb": 100,
+        "quality": 80
+      },
+      "lazy_loading": {
+        "threshold": 0.8,
+        "placeholder_quality": 20
+      }
+    }
+  },
+  "accessibility": {
+    "required_aria": true,
+    "contrast_ratio": 4.5,
+    "semantic_headings": {
+      "required_levels": ["h1", "h2", "h3"],
+      "skip_levels": false
+    }
+  },
+  "seo": {
+    "required_meta": ["title", "description", "og:image"],
+    "structured_data": {
+      "article": true,
+      "product": false 
+    },
+    "canonical_url": {
+      "enforce_https": true,
+      "trailing_slash": "never"
+    }
+  }
+}
